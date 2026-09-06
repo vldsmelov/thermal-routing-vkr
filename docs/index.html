@@ -17,10 +17,13 @@
 <script>document.documentElement.classList.add("js");</script>
 <link href="./styles.css" rel="stylesheet"/>
 <script defer="" src="./app.js"></script>
+<style>
+.quick-summary{background:#f1f5f2}.summary-grid{margin-top:30px}.summary-grid .card{padding:22px}.summary-grid h3{font-size:19px;line-height:1.3}.summary-grid p{font-size:14px}.summary-flow,.summary-axis,.summary-compare{margin-top:17px;padding-top:13px;border-top:1px solid var(--line);font-size:12px;color:var(--cold);line-height:1.5}.summary-compare{font-weight:700;letter-spacing:.05em}.summary-label{display:block;margin-top:16px;font-size:11px;color:var(--cold);letter-spacing:.06em;text-transform:uppercase}.summary-evidence{display:grid;grid-template-columns:220px 1fr auto;gap:20px;align-items:center;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);font-size:14px}.summary-evidence span{font-weight:600}.summary-evidence p{color:var(--muted);font-size:13px}.summary-evidence a{font-size:12px}.summary-end{margin-top:38px;padding-top:28px;border-top:1px solid var(--line)}.summary-end h3{font-size:24px}.summary-end .button-link{margin:20px 14px 0 0}.secondary-link{background:transparent;color:var(--ink);border:1px solid var(--line)}.secondary-link:hover{color:white}.summary-end .caption{margin-top:14px}@media(max-width:800px){.summary-evidence{grid-template-columns:1fr}.summary-end .button-link{display:flex;width:max-content;max-width:100%}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержанию</a>
-<header class="topbar"><div class="wrap"><span class="top-label">Исследовательская концепция</span><nav aria-label="Основная навигация"><a href="#question">Вопрос</a><a href="#evidence">Основания</a><a href="#experiment">Эксперимент</a></nav></div></header>
+<header class="topbar"><div class="wrap"><span class="top-label">Исследовательская концепция</span><nav aria-label="Основная навигация"><a href="#summary">Коротко</a><a href="#evidence">Основания</a><a href="#experiment">Эксперимент</a></nav></div></header>
 <main id="main">
 <section aria-labelledby="hero-title" class="hero section" id="concept"><div class="wrap">
 <div class="hero-grid"><div>
@@ -28,7 +31,7 @@
 <h1 id="hero-title">Эволюционный синтез путей теплопереноса</h1><p class="hero-topic">Статические и реконфигурируемые структуры для изменяющихся тепловых нагрузок</p>
 <p class="hero-subtitle">Как отводить тепло, если самая горячая область всё время меняется?</p>
 <p class="lead"><strong>Готовый маршрут не задаём — его ищет алгоритм.</strong> Сначала найдём одну структуру для разных нагрузок, затем проверим пользу переключения её участков.</p>
-<a class="button-link" href="#question">Разобраться в идее <span aria-hidden="true">↓</span></a>
+<a class="button-link" href="#summary">Вся идея за 2 минуты <span aria-hidden="true">↓</span></a>
 <p class="hero-note">Пока это концепция: расчёты — следующий шаг.</p>
 </div><figure class="hero-figure">
 <div class="figure-top"><span>Меняется источник — меняется путь</span></div>
@@ -42,12 +45,25 @@
 <figcaption>Схема принципа. Реальная структура появится после поиска.</figcaption>
 </figure></div>
 </div></section>
-<section aria-labelledby="question-title" class="section" id="question"><div class="wrap">
+<section aria-labelledby="summary-title" class="section quick-summary" id="summary"><div class="wrap">
+<span class="eyebrow">За 2 минуты</span><h2 id="summary-title">Коротко о работе</h2><p class="intro">Если читать только один раздел — достаточно этого, чтобы понять замысел работы.</p>
+<div class="grid3 summary-grid">
+<article class="card"><span class="tag">01 / Проблема</span><h3>Источники тепла меняются, конструкция — нет</h3><p>Одна заранее настроенная структура не всегда успевает за меняющейся нагрузкой.</p></article>
+<article class="card"><span class="tag">02 / Идея</span><h3>Пусть структуру найдёт алгоритм</h3><p>Мы не задаём маршрут заранее: поиск получает источники, сток и бюджет материала и сам подбирает структуру.</p><div class="summary-flow">Тепловая нагрузка → Эволюционный поиск → Тепловая структура</div></article>
+<article class="card"><span class="tag">03 / Вопрос 1</span><h3>Какую структуру найдёт эволюция?</h3><p>Сначала ищем решение для одного режима, затем — устойчивое решение для нескольких.</p><span class="summary-label">RQ1 · форма и структура</span></article>
+<article class="card"><span class="tag">04 / Вопрос 2</span><h3>Что даст возможность перестройки?</h3><p>Сравним перестраиваемую структуру с сильной статической, устойчивой к разным нагрузкам.</p><div class="summary-compare">УСТОЙЧИВАЯ СТАТИКА ↔ ПЕРЕСТРОЙКА</div><span class="summary-label">RQ2 · ценность перестройки</span></article>
+<article class="card"><span class="tag">05 / Модель</span><h3>Простая проверяемая модель</h3><p>Двумерная нестационарная теплопроводность: четыре возможных источника, один сток и одинаковый бюджет материала для всех вариантов.</p><div class="summary-axis">контраст проводимости × группы управления × неоднородность нагрузки</div></article>
+<article class="card"><span class="tag">06 / Результат</span><h3>Главный результат</h3><p>Определим, где перестройка помогает, а где достаточно хорошей статической структуры.</p><div class="summary-compare">Перестройка помогает <b>ИЛИ</b> статика достаточна</div><p class="caption">Оба исхода — содержательные результаты ВКР.</p></article>
+</div>
+<div class="summary-evidence"><span>Почему это имеет научное основание</span><p>Управляемая проводимость, тепловая маршрутизация, тепловые метаматериалы и эволюционная оптимизация уже показаны в публикациях. Здесь мы проверяем их сочетание в ограниченной вычислительной постановке.</p><a href="#evidence">13 выбранных публикаций · ссылки на DOI ↓</a></div>
+<div class="summary-end"><h3>Этого достаточно для общего понимания идеи.</h3><div><a class="button-link" href="#question">Подробнее о постановке ↓</a><a class="button-link secondary-link" href="#evidence">Перейти к научным основаниям ↓</a></div><p class="caption">Ниже — подробная постановка, сравнение, ограничения и база публикаций.</p></div>
+</div></section>
+<details aria-labelledby="question-title" class="section section-detail" id="question"><summary>Подробнее о проблеме и сравнении подходов</summary><div class="wrap">
 <span class="eyebrow">02 / Проблема</span><h2 id="question-title">Нагрев меняется. Должен ли меняться теплоотвод?</h2>
 <p class="intro">В процессоре или силовом модуле разные участки нагреваются в разное время. Можно заранее найти одну конструкцию для всех режимов. А можно попробовать подстраивать её тепловые свойства под текущую нагрузку.</p>
 <div class="grid2"><article class="card"><span class="tag">Статическая структура</span><h3>Один раз настроили — дальше работает как есть</h3><img alt="Пластина с постоянным расположением проводящих областей и активным источником слева." class="diagram" height="1254" src="./assets/generated/static.png" width="1254"/><p>Материал и его расположение не меняются. Когда активный источник смещается, тепло распределяется иначе, но сама конструкция остаётся прежней.</p></article><article class="card"><span class="tag">Реконфигурируемая структура</span><h3>Свойства участков подстраиваются под нагрев</h3><img alt="Та же внешняя форма пластины: активен другой источник, условный путь ведёт к теплоотводу справа." class="diagram" height="1254" src="./assets/generated/hero_b.png" width="1254"/><p>Внешняя форма остаётся той же. Меняется проводимость внутри пластины — и вместе с ней предпочтительное направление отвода тепла.</p></article></div>
 <div class="question"><span class="eyebrow">Что хотим выяснить</span><h3>Сможет ли такая перестройка снизить пиковую температуру лучше, чем одна хорошо оптимизированная статическая структура?</h3><span class="compare-label">ГЛАВНОЕ СРАВНЕНИЕ: B2-robust ↔ B3</span><p>Сравним их на одинаковых нагрузках, с одинаковым количеством функционального материала и одинаковыми доступными состояниями проводимости.</p></div>
-</div></section><section aria-labelledby="synthesis-title" class="section" id="synthesis"><div class="wrap">
+</div></details><details aria-labelledby="synthesis-title" class="section section-detail" id="synthesis"><summary>Показать, как алгоритм ищет структуру</summary><div class="wrap">
 <span class="eyebrow">03 / Эволюционный синтез</span><h2 id="synthesis-title">Как появляется теплопроводящая структура</h2>
 <p class="intro">Мы задаём источники тепла, место отвода, доступный объём материала и критерий качества. Алгоритм пробует разные размещения, оценивает перегрев и изменяет удачные варианты. Рисунок пути заранее не задан.</p>
 <div class="synthesis-layout"><figure class="growth-figure">
@@ -63,7 +79,7 @@
 </figure><div class="growth-copy"><span class="tag">От условий — к форме</span><h3>От заданных условий к найденной форме.</h3>
 <ol class="growth-steps"><li><strong>Размещаем материал</strong><p>Кандидаты отличаются положением участков и их состояниями. Количество материала у всех одинаковое.</p></li><li><strong>Считаем нагрев</strong><p>Лучше тот вариант, у которого ниже максимальная температура на худшей проектной истории.</p></li><li><strong>Отбираем и меняем</strong><p>Удачные размещения дают начало новым кандидатам. Проверяем переносы участков и смену направлений проводимости.</p></li><li><strong>Смотрим, что получилось</strong><p>Короткие связи, общие магистрали, ветвления или рассеянные включения — форму покажет поиск.</p></li></ol>
 </div></div>
-</div></section>
+</div></details>
 <section aria-labelledby="principle-title" class="section" id="principle"><div class="wrap">
 <span class="eyebrow">04 / Принцип</span><h2 id="principle-title">От найденного пути — к переключаемой структуре</h2>
 <div class="grid4 synthesis-progression"><article class="card principle-card"><span class="tag">01 / Отправная точка</span><h3>Однородная пластина</h3><img alt="Условная схема: однородная пластина." class="diagram" height="1254" src="./assets/generated/homogeneous.png" width="1254"/><p>Один материал по всей площади. С него начинается сравнение.</p></article><article class="card principle-card"><span class="tag">02 / Evolved static (найденная статика)</span><h3>Структура для одного режима</h3><img alt="Условная схема: структура для одного режима." class="diagram" height="1254" src="./assets/generated/static.png" width="1254"/><p>Алгоритм ищет размещение под один неподвижный источник. Найденные свойства фиксируются.</p></article><article class="card principle-card"><span class="tag">03 / Robust static (робастная статика)</span><h3>Одна структура для разных нагрузок</h3><img alt="Условная схема: одна структура для разных нагрузок." class="diagram" height="1254" src="./assets/generated/static.png" width="1254"/><p>Тот же поиск учитывает сразу несколько режимов. Получаем сильную неизменную альтернативу.</p></article><article class="card principle-card"><span class="tag">04 / Evolved reconfigurable (найденная реконфигурация)</span><h3>Добавляем переключение</h3><img alt="Условная схема: добавляем переключение." class="diagram" height="1254" src="./assets/generated/hero_a.png" width="1254"/><p>Ищем размещение и состояния групп по текущему нагреву. Геометрия при работе остаётся постоянной.</p></article></div>

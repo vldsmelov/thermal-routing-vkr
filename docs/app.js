@@ -14,10 +14,12 @@ document.querySelectorAll('[data-set-scenario]').forEach(button => {
   });
 });
 const contrast = document.querySelector('#contrast');
-contrast.addEventListener('input', () => {
-  document.querySelector('#contrast-value').value = contrast.value;
-  document.querySelector('#contrast-line').style.opacity = String(.15 + .85 * (Number(contrast.value) - 1) / 15);
-});
+if (contrast) {
+  contrast.addEventListener('input', () => {
+    document.querySelector('#contrast-value').value = contrast.value;
+    document.querySelector('#contrast-line').style.opacity = String(.15 + .85 * (Number(contrast.value) - 1) / 15);
+  });
+}
 const groups = document.querySelector('#groups');
 const cells = [...document.querySelectorAll('#zone-grid i')];
 function updateGroups() {
@@ -30,8 +32,10 @@ function updateGroups() {
   });
   document.querySelector('#groups-description').textContent = count === 16 ? '16 групп: каждый участок управляется отдельно.' : `${count} групп: по ${16 / count} участков с общим состоянием.`;
 }
-groups.addEventListener('change', updateGroups);
-updateGroups();
+if (groups) {
+  groups.addEventListener('change', updateGroups);
+  updateGroups();
+}
 
 const generationCopy = {
   0: 'Поколение 0. Разрозненные участки: отправная точка условного поиска.',
