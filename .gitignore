@@ -11,3 +11,4 @@
 /docs/assets/*
 !/docs/assets/generated/
 !/docs/assets/generated/*.png
+!/.github/
