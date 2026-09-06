@@ -1,0 +1,13 @@
+/*
+!/.gitignore
+!/docs/
+/docs/*
+!/docs/index.html
+!/docs/styles.css
+!/docs/app.js
+!/docs/README.md
+!/docs/.nojekyll
+!/docs/assets/
+/docs/assets/*
+!/docs/assets/generated/
+!/docs/assets/generated/*.png
