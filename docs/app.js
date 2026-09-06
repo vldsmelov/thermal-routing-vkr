@@ -32,3 +32,22 @@ function updateGroups() {
 }
 groups.addEventListener('change', updateGroups);
 updateGroups();
+
+const generationCopy = {
+  0: 'Поколение 0. Разрозненные участки: отправная точка условного поиска.',
+  10: 'Поколение 10. В условном примере появляются короткие локальные связи.',
+  30: 'Поколение 30. Несколько связей складываются в общие пути; отдельные участки ещё разобщены.',
+  100: 'Поколение 100. Условный финал: связная структура с ответвлениями к источникам. Её тепловое качество не рассчитано.'
+};
+document.querySelectorAll('[data-generation]').forEach(button => {
+  button.addEventListener('click', () => {
+    const generation = button.dataset.generation;
+    document.querySelectorAll('[data-frame]').forEach(frame => {
+      frame.toggleAttribute('hidden', frame.dataset.frame !== generation);
+    });
+    document.querySelectorAll('[data-generation]').forEach(item => {
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+    document.querySelector('#generation-description').textContent = generationCopy[generation];
+  });
+});
